@@ -7,16 +7,18 @@ constexpr float E = 35.124;
 constexpr float PI = 3.1415;
 constexpr float EULER = 2.7182;
 
+using namespace std;
+
 void f(float x)
 {
     if ((E * sin(2 * x + 2)) == 0)
     {
-        std::cout << "Blad: dzielenie przez 0" << std::endl;
+        cout << "Blad: dzielenie przez 0" << endl;
     }
     else
     {
-        std::cout << "f(" << x << ")=";
-        std::cout << (D * cos(2 * x - 3)) / (E * sin(2 * x + 2)) << std::endl;
+        cout << "f(" << x << ")=";
+        cout << (D * cos(2 * x - 3)) / (E * sin(2 * x + 2)) << endl;
     }
 }
 
@@ -25,13 +27,13 @@ void g(float x)
     float expr = 2.5 - fabs(2.5 * x - 2.0);
     if (expr > 0)
     {
-        std::cout << "g(" << x << ")=";
-        std::cout << pow(expr, 1.0 / 6.0) << std::endl;
+        cout << "g(" << x << ")=";
+        cout << pow(expr, 1.0 / 6.0) << endl;
     }
     else
     {
-        std::cout << "g(" << x << ")=";
-        std::cout << pow(abs(expr), 1.0 / 6.0) * cos(PI / 6.0) << " + " << pow(abs(expr), 1.0 / 6.0) * sin(PI / 6.0) << "i" << std::endl;
+        cout << "g(" << x << ")=";
+        cout << pow(abs(expr), 1.0 / 6.0) * cos(PI / 6.0) << " + " << pow(abs(expr), 1.0 / 6.0) * sin(PI / 6.0) << "i" << endl;
     }
 }
 
@@ -39,33 +41,33 @@ void h(float x)
 {
     if (x == 1)
     {
-        std::cout << "Blad: dzielenie przez 0" << std::endl;
+        cout << "Blad: dzielenie przez 0" << endl;
     }
     else if (x <= 0)
     {
-        std::cout << "Blad: liczba logarytmowana musi byc dodatnia" << std::endl;
+        cout << "Blad: liczba logarytmowana musi byc dodatnia" << endl;
     }
     else
     {
-        std::cout << "h(" << x << ")=";
-        std::cout << pow((8.7264 * x) + log(x), EULER / (x - 1)) << std::endl;
+        cout << "h(" << x << ")=";
+        cout << pow((8.7264 * x) + log(x), EULER / (x - 1)) << endl;
     }
 }
 
 int main()
 {
 
-    std::cout << std::fixed;
-    std::cout << std::setprecision(2);
+    cout << fixed;
+    cout << setprecision(2);
 
     float input;
     char functionChoice;
 
-    std::cout << "Podaj wartosc x" << std::endl;
-    std::cin >> input;
+    cout << "Podaj wartosc x" << endl;
+    cin >> input;
 
-    std::cout << "Wybierz funkcję [a,b,c]" << std::endl;
-    std::cin >> functionChoice;
+    cout << "Wybierz funkcję [a,b,c]" << endl;
+    cin >> functionChoice;
 
     switch (functionChoice)
     {
@@ -82,4 +84,5 @@ int main()
         f(input);
         break;
     }
+    return 0;
 }
